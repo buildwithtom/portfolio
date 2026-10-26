@@ -29,21 +29,27 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Cloudflare Workers
+## Deploy on Cloudflare Pages
 
 This portfolio uses Next.js static export. `npm run build` generates the website in
-`out/`, and `wrangler.jsonc` configures Cloudflare to serve those files directly.
+`out/`, which Cloudflare Pages serves directly.
 Browser animations and navigation continue to run in the exported site.
 
-Connect the GitHub repository to the Cloudflare Worker named `portfolio` with:
+Connect the GitHub repository to a Cloudflare Pages project with:
 
+- Framework preset: Next.js (Static HTML Export)
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
+- Build output directory: `out`
+- Production branch: `main`
 - Root directory: the repository root
 
-Commit `next.config.ts` and `wrangler.jsonc` before retrying deployment. Do not use
-`.next` as the deployed assets directory or run the OpenNext migration for this
-static site. The generated `out/` directory stays excluded from Git.
+Pages builds and publishes the site automatically when commits are pushed to
+`main`. It does not need a separate deploy command, a Worker, or the OpenNext
+adapter. The generated `out/` directory stays excluded from Git.
+
+For an existing Pages project, update its build settings and redeploy the latest
+commit. Confirm the output directory is `out`, not `.next`, then open the
+production URL shown in the project's deployment details.
 
 ## Deploy on Vercel
 
