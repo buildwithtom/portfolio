@@ -29,6 +29,22 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Cloudflare Workers
+
+This portfolio uses Next.js static export. `npm run build` generates the website in
+`out/`, and `wrangler.jsonc` configures Cloudflare to serve those files directly.
+Browser animations and navigation continue to run in the exported site.
+
+Connect the GitHub repository to the Cloudflare Worker named `portfolio` with:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: the repository root
+
+Commit `next.config.ts` and `wrangler.jsonc` before retrying deployment. Do not use
+`.next` as the deployed assets directory or run the OpenNext migration for this
+static site. The generated `out/` directory stays excluded from Git.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
