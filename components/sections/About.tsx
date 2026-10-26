@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-12 md:py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-4 font-mono text-base md:text-lg">
             <p>
-              Hey there! I&apos;m Tom Jose, a Software Engineer with over four years of professional experience developing web applications across the entire Software Development Life Cycle.
+              Hey there! I&apos;m Tom Jose, a Software Engineer with over five years of professional experience developing web applications across the entire Software Development Life Cycle.
             </p>
             <p>
               Experienced in full-stack development, problem-solving, and collaborative work within team environments. Over the last few years, I&apos;ve built everything from interactive data visualizations to complex enterprise CMS platforms, always aiming to craft reliable and genuinely helpful digital experiences.
@@ -38,7 +38,7 @@ export function About() {
               </li>
               <li className="flex flex-col">
                 <span className="text-foreground/60 uppercase tracking-wider text-xs">Experience</span>
-                <span className="text-base font-bold">4+ Years</span>
+                <span className="text-base font-bold">5+ Years</span>
               </li>
               <li className="flex flex-col">
                 <span className="text-foreground/60 uppercase tracking-wider text-xs">Specialties</span>

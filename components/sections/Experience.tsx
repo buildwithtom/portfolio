@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-12 md:py-16">
       <SectionHeading title="Experience" />
       
-      <div className="mt-12 space-y-8 pl-4 md:pl-0">
+      <div className="mt-8 space-y-8 pl-4 md:pl-0">
         {EXPERIENCE.map((exp, index) => (
           <motion.div
             key={exp.id}

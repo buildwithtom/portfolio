@@ -12,10 +12,10 @@ import { motion } from "framer-motion";
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-12 md:py-16">
       <SectionHeading title="Projects" />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {PROJECTS.map((project, index) => (
           <motion.div
             key={project.title}
@@ -40,20 +40,26 @@ export function Projects() {
                   ))}
                 </div>
               </CardContent>
-              {/* <CardFooter className="pt-0 border-t-2 border-dashed border-foreground/30 mt-auto pt-6 justify-between flex-nowrap">
-                <Button variant="ghost" size="sm" asChild className="w-1/2 rounded-none border-r-2 border-dashed border-foreground/30">
-                  <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </a>
-                </Button>
-                <Button variant="ghost" size="sm" asChild className="w-1/2 rounded-none">
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live
-                  </a>
-                </Button>
-              </CardFooter> */}
+              {(project.githubUrl || project.liveUrl) && (
+                <CardFooter className="border-t-2 border-dashed border-foreground/30 mt-auto pt-4">
+                  {project.githubUrl && (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub (opens in a new tab)`}>
+                        <Github aria-hidden="true" className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
+                  {project.liveUrl && (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title} (opens in a new tab)`}>
+                        <ExternalLink aria-hidden="true" className="w-4 h-4 mr-2" />
+                        {project.liveLabel ?? "Visit Site"}
+                      </a>
+                    </Button>
+                  )}
+                </CardFooter>
+              )}
             </Card>
           </motion.div>
         ))}

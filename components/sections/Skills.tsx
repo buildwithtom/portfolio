@@ -21,13 +21,13 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-12 md:py-16">
       <SectionHeading title="Skills" />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 mt-8">
         {(Object.keys(SKILLS) as Array<keyof typeof SKILLS>).map((category) => (
           <div key={category} className="border-2 border-foreground p-6 bg-background retro-shadow">
-            <h3 className="font-pixel text-2xl uppercase mb-6 text-foreground border-b-2 border-dashed border-foreground/30 pb-2">
+            <h3 className="font-pixel text-2xl uppercase mb-4 text-foreground border-b-2 border-dashed border-foreground/30 pb-2">
               {category}
             </h3>
             
@@ -36,11 +36,11 @@ export function Skills() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="flex flex-wrap gap-3"
+              className="grid grid-cols-2 gap-2"
             >
               {SKILLS[category].map((skill) => (
-                <motion.div key={skill} variants={itemVariants}>
-                  <Badge variant="outline" className="px-3 py-1.5 text-sm bg-white hover:bg-retro-green hover:text-white hover:border-retro-green transition-colors cursor-default">
+                <motion.div key={skill} variants={itemVariants} className="min-w-0">
+                  <Badge variant="outline" className="flex h-full min-h-9 w-full justify-center px-2 py-1.5 text-center text-sm leading-tight [overflow-wrap:anywhere] bg-white hover:bg-retro-green hover:text-white hover:border-retro-green transition-colors cursor-default">
                     {skill}
                   </Badge>
                 </motion.div>
