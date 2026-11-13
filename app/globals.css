@@ -43,3 +43,28 @@ body {
   color: #fff;
 }
 
+@keyframes tail-flicker {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.8); }
+}
+
+.pixel-tail-flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: tail-flicker 700ms steps(2, end) infinite;
+}
+
+@keyframes scroll-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.hero-scroll-orb {
+  animation: scroll-float 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-tail-flame,
+  .hero-scroll-orb { animation: none; }
+}
+

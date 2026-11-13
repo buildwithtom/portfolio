@@ -21,7 +21,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-12 md:py-16">
+    <section id="skills" className="py-8 md:py-16">
       <SectionHeading title="Skills" />
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 mt-8">

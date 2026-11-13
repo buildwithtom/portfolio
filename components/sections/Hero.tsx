@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   const [text, setText] = React.useState("");
@@ -29,7 +30,7 @@ export function Hero() {
   const part2 = text.length > 8 ? text.slice(8) : "";
 
   return (
-    <section id="home" className="min-h-[80vh] flex flex-col justify-center py-20 relative">
+    <section id="home" className="min-h-[calc(100svh-4rem)] md:min-h-[80vh] flex flex-col justify-center pt-12 pb-28 md:pt-20 relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -49,7 +50,7 @@ export function Hero() {
         </h1>
 
         <h2 className="text-xl md:text-3xl font-mono text-foreground/80 mb-12 max-w-2xl">
-          Software Engineer crafting modern web applications, interactive dashboards, and robust UI systems.
+          Software Engineer crafting modern web applications, interactive dashboards, data visualizations, and robust UI systems.
         </h2>
 
         <div className="flex flex-wrap items-center gap-4">
@@ -61,6 +62,22 @@ export function Hero() {
           </Button>
         </div>
       </motion.div>
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        onClick={(event) => {
+          const about = document.getElementById("about");
+          if (!about) return;
+          event.preventDefault();
+          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          about.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
+        }}
+        className="group absolute bottom-5 left-1/2 -translate-x-1/2 flex h-12 w-12 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-foreground"
+      >
+        <span className="hero-scroll-orb flex h-full w-full items-center justify-center rounded-full border-[0.5px] border-foreground/60 text-foreground/70 transition-colors duration-300 group-hover:border-foreground group-hover:text-foreground motion-reduce:transition-none">
+          <ArrowDown aria-hidden="true" className="h-5 w-5" strokeWidth={0.5} />
+        </span>
+      </a>
     </section>
   );
 }

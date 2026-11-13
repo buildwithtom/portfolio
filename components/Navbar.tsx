@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { FileText, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "@/components/ui/Icons";
-import { Button } from "./ui/Button";
 
 const TABS = [
   { name: "Home", href: "#home" },
@@ -73,9 +73,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 w-full border-b-2 border-foreground bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <a href="#home" aria-label="Tom Jose — home" className="flex items-center group">
-            <div className="w-8 h-8 bg-foreground flex items-center justify-center retro-shadow-sm group-hover:bg-retro-green transition-colors">
-              <span className="text-background font-pixel text-lg">TJ</span>
-            </div>
+            <Image src="/icon.svg" alt="" width={32} height={32} unoptimized className="retro-shadow-sm" />
           </a>
 
           {/* Desktop Nav */}
@@ -106,10 +104,6 @@ export function Navbar() {
             <a href="https://linkedin.com/in/tom-jose-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in a new tab)" className="text-foreground hover:text-retro-green transition-colors">
               <Linkedin aria-hidden="true" className="w-5 h-5" />
             </a>
-            <Button variant="outline" size="sm" className="hidden lg:flex" disabled>
-              <FileText className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -156,10 +150,6 @@ export function Navbar() {
               <a href="https://linkedin.com/in/tom-jose-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in a new tab)" className="text-foreground">
                 <Linkedin aria-hidden="true" className="w-6 h-6" />
               </a>
-              <Button variant="default" disabled className="w-full max-w-xs mx-auto mt-4">
-                <FileText className="w-4 h-4 mr-2" />
-                Resume
-              </Button>
             </div>
           </nav>
         </div>

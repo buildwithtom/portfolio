@@ -4,14 +4,14 @@ import * as React from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "@/components/ui/Icons";
-import { Mail, FileText, ArrowUp, Phone } from "lucide-react";
+import { Mail, ArrowUp, Phone } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="pt-12 md:pt-16 pb-10 border-t-2 border-dashed border-foreground/30 relative">
+    <section id="contact" className="pt-8 md:pt-16 pb-10 border-t-2 border-dashed border-foreground/30 relative">
       <SectionHeading title="Contact" />
       
-      <div className="max-w-3xl flex flex-col md:flex-row gap-12 mt-8">
+      <div className="max-w-3xl flex flex-col md:flex-row gap-8 md:gap-12 mt-8">
         <div className="flex-1 space-y-6">
           <p className="font-sans text-lg text-foreground/80 leading-relaxed">
             I&apos;m currently looking for new opportunities. Whether you have a question, a project in mind, or just want to say hi, I&apos;ll try my best to get back to you!
@@ -24,7 +24,7 @@ export function Contact() {
           </Button>
         </div>
         
-        <div className="flex-1 border-l-2 border-dashed border-foreground/30 pl-0 md:pl-12 pt-8 md:pt-0 border-t-2 md:border-t-0">
+        <div className="flex-1 min-w-0 border-t-2 border-dashed border-foreground/30 pt-6 md:border-t-0 md:border-l-2 md:pl-12 md:pt-0">
           <h3 className="font-pixel text-xl uppercase mb-6 text-foreground">Find Me Online</h3>
           <ul className="space-y-4 font-mono">
             <li>
@@ -44,12 +44,6 @@ export function Contact() {
                 <Phone className="w-5 h-5 mr-3 group-hover:-translate-y-1 transition-transform" />
                 +91 9633867277
               </a>
-            </li>
-            <li>
-              <button type="button" disabled className="flex items-center text-foreground opacity-50 cursor-not-allowed">
-                <FileText className="w-5 h-5 mr-3" />
-                Download Resume
-              </button>
             </li>
           </ul>
         </div>
