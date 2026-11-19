@@ -30,6 +30,13 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://www.a-tla.org/",
   },
   {
+    title: "Your Little World",
+    description: "A cozy habit-building game where completing real-life activities grows a hillside world, with evolving buildings, progress tracking, offline play, and backup export.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "PWA"],
+    githubUrl: "https://github.com/buildwithtom/your-little-world",
+    liveUrl: "https://your-little-world.pages.dev/",
+  },
+  {
     title: "Whenly",
     description: "A private activity tracker for remembering when you last did life's little things, with completion history, gentle reminders, offline support, and backup export.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Dexie"],
